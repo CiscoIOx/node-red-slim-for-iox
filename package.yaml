@@ -1,0 +1,40 @@
+descriptor-schema-version: "2.5"
+
+info:
+  name: NodeRedApp
+  description: "Node Red app that does magic"
+  version: "1.0"
+  author-link: "http://www.cisco.com"
+  author-name: "Cisco Systems"
+
+app:
+  # Indicate app type (vm, paas, lxc etc.,)
+  cpuarch: "x86_64"
+  type: docker
+  resources:
+    profile: c1.large
+    network:
+      -
+        interface-name: eth0
+        ports:
+            tcp: [1880]
+    devices:
+      -
+        type: serial
+        label: HOST_DEV_S1
+        usage: Device serial port 1 
+      -
+        type: serial
+        label: HOST_DEV_S2
+        usage: Device serial port 2
+      -
+        type: usbdev
+        label: HOST_DEV_U1
+        usage: Device USB port 1
+        function: serial
+        mandatory: no
+
+# Specify runtime and startup
+  startup:
+    rootfs: rootfs.tar
+    target: ["/usr/src/node-red/node_modules/.bin/node-red"]
