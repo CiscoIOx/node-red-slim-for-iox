@@ -8,7 +8,7 @@ Build the image using:
 
 `docker build -t node0:1.0 .`
 
-### Usage
+## Usage
 
 By building the above image, later you can use it to build docker image of IOx GPS node or other nodes.
 
