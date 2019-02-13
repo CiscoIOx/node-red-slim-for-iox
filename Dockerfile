@@ -13,7 +13,9 @@ USER node-red
 
 COPY package.json /usr/src/node-red/
 
+# This line is for Cisco intranet only. Remove it for outside use.
 RUN npm config set proxy http://proxy-sjc-1.cisco.com:80/
+
 RUN npm install
 
 EXPOSE 1880
