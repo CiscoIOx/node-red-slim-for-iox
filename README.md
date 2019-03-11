@@ -2,9 +2,11 @@
 
 This repo contains code to build the docker image of Node-RED slim version that can be run on Cisco IR800 series devices.
 
+You can also run the app on Cisco DevNet Sandbox if you remove the "devices" section in **package.yaml**.
+
 ## Installation
 
-Build the image using:
+After you `git clone` this repo, build the Docker image using:
 
 `docker build -t node0:1.0 .`
 
@@ -16,7 +18,7 @@ If you want to play with the Node-RED without IOx specific nodes, you can now pa
 
 `ioxclient docker package node0:1.0 .`
 
-Then deploy, activate and start the app in your device.
+Then use Local Manager, ioxclient or Fog Director to deploy, activate and start the app in your device(s).
 
 ## Getting help
 
