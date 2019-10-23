@@ -24,7 +24,7 @@ Then use Local Manager, ioxclient or Fog Director to deploy, activate and start 
 
 **For Local Manager option:**
 
-Access device Local Manager UI using the URL path **https://:8443**.
+Access device Local Manager UI using the URL path **https://<IR829_mgmt_intf_ip>:8443**.
 
 Deploy the app using the name `nodered` and the package `package.tar` that you created.
 
@@ -66,7 +66,9 @@ The `activation.json` file is similar to the Sample Activation payload in [GPS s
 
 ## Verify the app is running
 
-Open Node-RED interface at **http://:1880**.
+a) Add NAT forwarding rule in IOS running configuration for port 1880.
+
+b) Open Node-RED interface at **http://<IR829_mgmt_interface_ip>:1880**.
 
 ![image](https://user-images.githubusercontent.com/47573639/52670134-ad776580-2ecc-11e9-8cdc-ee5e62316ee2.png)
 
